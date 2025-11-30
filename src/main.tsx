@@ -4,12 +4,17 @@ import "./index.css";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Login from "./pages/Login";
+import Password from "./pages/Password";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Login />,
   },
+  {
+    path: "/password",
+    element: <Password />
+  }
 ]);
 
 createRoot(document.getElementById("root")!).render(
