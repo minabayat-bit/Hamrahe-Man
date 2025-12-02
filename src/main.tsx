@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Login from "./pages/Login";
 import Password from "./pages/Password";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "/password",
     element: <Password />
+  },
+  {
+    path: "/home",
+    element: <Home />
   }
 ]);
 

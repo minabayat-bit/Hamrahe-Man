@@ -1,12 +1,33 @@
-import i18next from "i18next";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
+
 import logo from "../assets/img/light-logo.svg";
+import { useNavigate } from "react-router";
 
 function Password() {
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+
+  const [code, setCode] = useState<string[]>(["", "", "", "", ""]);
+
+  const handleChange = (value: string, index: number) => {
+    const newCode = [...code];
+    newCode[index] = value;
+    setCode(newCode);
+  };
+
+  const handleConfirm = () => {
+    const isComplete = code.every((digit) => digit !== "");
+    if (isComplete) {
+      // اینجا می‌تونی کد رو بفرستی به سرور یا مستقیم بری صفحه بعدی
+      navigate("/Home"); // مسیر صفحه بعدی
+    } else {
+      alert("لطفاً تمام ارقام را وارد کنید.");
+    }
+  };
 
   return (
-    <div>
+    <div dir={i18n.language === "fa" ? "rtl" : "ltr"}>
       <div className="min-h-screen bg-[#0095da] flex flex-col pt-30">
         <div className="flex flex-col h-screen bg-white rounded-t-3xl mt-4 p-6 relative">
           <div className="mb-8">
@@ -17,17 +38,22 @@ function Password() {
 
           <div className="mb-6 flex flex-col gap-100">
             <div className="flex gap-3 mb-8">
-              {[...Array(5)].map((_, index) => (
+              {code.map((digit, index) => (
                 <input
                   key={index}
                   type="text"
                   maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleChange(e.target.value, index)}
                   className="w-14 h-14 text-center text-xl font-bold border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-colors"
                 />
               ))}
             </div>
 
-            <button className="w-full bg-[#0095da] text-white py-3 rounded-lg font-medium hover:bg-[#0095da] transition-colors">
+            <button
+              onClick={handleConfirm}
+              className="w-full bg-[#0095da] text-white py-3 rounded-lg font-medium hover:bg-[#0095da] transition-colors"
+            >
               {t("confirm_code_button")}
             </button>
           </div>
@@ -38,3 +64,4 @@ function Password() {
 }
 
 export default Password;
+
