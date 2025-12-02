@@ -13,6 +13,10 @@ i18next.use(initReactI18next).init({
         enter_code: "کد تائید را وارد کنید",
         sent_code: "کد 5 رقمی به شماره ارسال شد",
         confirm_code_button: "تائید و ادامه",
+        conversation: "مکالمه",
+        internet: "اینترنت",
+        sms: "پیامک",
+
       },
     },
     en: {
@@ -25,6 +29,10 @@ i18next.use(initReactI18next).init({
         enter_code: "Please enter the code",
         sent_code: "Code sent to the number",
         confirm_code_button: "confirm",
+        conversation: "conversation",
+        internet: "internet",
+         sms: "sms",
+
       },
     },
   },

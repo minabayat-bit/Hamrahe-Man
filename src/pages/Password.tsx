@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import logo from "../assets/img/light-logo.svg";
@@ -9,20 +9,23 @@ function Password() {
   const navigate = useNavigate();
 
   const [code, setCode] = useState<string[]>(["", "", "", "", ""]);
+  const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
 
   const handleChange = (value: string, index: number) => {
     const newCode = [...code];
     newCode[index] = value;
     setCode(newCode);
+    if (value && index < inputsRef.current.length - 1) {
+      inputsRef.current[index + 1]?.focus();
+    }
   };
 
   const handleConfirm = () => {
     const isComplete = code.every((digit) => digit !== "");
     if (isComplete) {
-      // اینجا می‌تونی کد رو بفرستی به سرور یا مستقیم بری صفحه بعدی
-      navigate("/Home"); // مسیر صفحه بعدی
+      navigate("/Home");
     } else {
-      alert("لطفاً تمام ارقام را وارد کنید.");
+      alert("لطفا کد را وارد کنید");
     }
   };
 
@@ -37,10 +40,11 @@ function Password() {
           </div>
 
           <div className="mb-6 flex flex-col gap-100">
-            <div className="flex gap-3 mb-8">
+            <div dir="ltr" className="flex gap-3 mb-8 ">
               {code.map((digit, index) => (
                 <input
                   key={index}
+                  ref={(el) => (inputsRef.current[index] = el)}
                   type="text"
                   maxLength={1}
                   value={digit}
@@ -64,4 +68,3 @@ function Password() {
 }
 
 export default Password;
-

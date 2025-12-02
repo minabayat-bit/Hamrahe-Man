@@ -1,9 +1,93 @@
+import s1 from "../assets/img/story1.jpeg";
+import s2 from "../assets/img/story2.jpg";
+import s3 from "../assets/img/story3.jpg";
+import s4 from "../assets/img/story4.jpg";
+import s5 from "../assets/img/story5.jpg";
+import s6 from "../assets/img/story6.jpg";
+import s7 from "../assets/img/story7.jpg";
+import Donut from "../components/Donut";
+import "../i18next/index";
+import { useTranslation } from "react-i18next";
 
+
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const Home = () => {
+const { t, i18n } = useTranslation();
+
   return (
     <div className="bg-gray-100 h-full">
       <div className="flex flex-row items-center p-6 gap-2">
+        <div className="flex justify-between px-3 w-full gap-8 border border-gray-100 py-2 bg-white rounded-2xl">
+          <svg
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            width="24"
+            preserveAspectRatio="xMidYMid meet"
+            focusable="false"
+          >
+            <defs></defs>
+            <path
+              stroke="#0095da"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.5"
+              d="M6 9l6 6 3-3"
+            ></path>
+            <path
+              stroke="#0095da"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.5"
+              d="M18 9l-1.5 1.5M6 9l4.586 4.586a2 2 0 002.828 0L15 12"
+            ></path>
+            <path
+              stroke="#ff4f00"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="1.5"
+              d="M18 9l-1.5 1.5"
+            ></path>
+          </svg>
+          <div className="flex flex-row items-center">
+            <span>number</span>
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              width="24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+            >
+              <defs></defs>
+              <path
+                stroke="#374151"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M4 12h16"
+              ></path>
+              <g
+                stroke="#374151"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+              >
+                <path d="M4 6h16M4 18h16"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
         <button className="p-2 border border-gray-100  bg-white rounded-2xl">
           <svg
             fill="none"
@@ -76,69 +160,66 @@ const Home = () => {
             ></path>
           </svg>
         </button>
-        <div className="flex justify-between px-3 w-full gap-8 border border-gray-100 py-2 bg-white rounded-2xl">
-          <svg
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            height="24"
-            width="24"
-            preserveAspectRatio="xMidYMid meet"
-            focusable="false"
-          >
-            <defs></defs>
-            <path
-              stroke="#0095da"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M6 9l6 6 3-3"
-            ></path>
-            <path
-              stroke="#0095da"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M18 9l-1.5 1.5M6 9l4.586 4.586a2 2 0 002.828 0L15 12"
-            ></path>
-            <path
-              stroke="#ff4f00"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="1.5"
-              d="M18 9l-1.5 1.5"
-            ></path>
-          </svg>
-          <div className="flex flex-row items-center">
-            <span>number</span>
-            <svg
-              fill="none"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              height="24"
-              width="24"
-              preserveAspectRatio="xMidYMid meet"
-              focusable="false"
-            >
-              <defs></defs>
-              <path
-                stroke="#374151"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-                d="M4 12h16"
-              ></path>
-              <g
-                stroke="#374151"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="1.5"
-              >
-                <path d="M4 6h16M4 18h16"></path>
-              </g>
-            </svg>
-          </div>
+      </div>
+      {/* //swiper */}
+      <div className="bg-white rounded-sm m-2 p-4">
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          spaceBetween={5}
+          slidesPerView={4}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+        >
+          <SwiperSlide>
+            {" "}
+            <img src={s1} />
+            <span></span>
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={s2} />
+          </SwiperSlide>
+          <SwiperSlide>
+            {" "}
+            <img src={s3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            {" "}
+            <img src={s4} />
+          </SwiperSlide>
+          <SwiperSlide>
+            {" "}
+            <img src={s5} />
+          </SwiperSlide>
+          <SwiperSlide>
+            {" "}
+            <img src={s6} />
+          </SwiperSlide>
+          <SwiperSlide>
+            {" "}
+            <img src={s7} />
+          </SwiperSlide>
+          ...
+        </Swiper>
+      </div>
+      {/* chart */}
+      <div className="bg-white p-6 flex flex-row m-2 rounded-sm text-gray-500">
+        <div className="flex flex-col items-center">
+          <span>{t("conversation")}</span>
+        <Donut />
         </div>
+        <div className="flex flex-col items-center">
+          <span>{t("internet")}</span>
+        <Donut />
+        </div>
+        <div className="flex flex-col items-center">
+          <span>{t("sms")}</span>
+        <Donut />
+        </div>
+        
+        
       </div>
     </div>
   );
