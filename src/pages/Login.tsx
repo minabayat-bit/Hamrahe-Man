@@ -2,13 +2,19 @@ import "../i18next/index";
 import logo from "../assets/img/light-logo.svg";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
-
-
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-    
-const navigate = useNavigate();
-  
+  const changePage = useNavigate();
+  const {
+    register,
+    formState: { errors },
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      phoneNumber: "",
+    },
+  });
 
   const { t, i18n } = useTranslation();
 
@@ -22,34 +28,28 @@ const navigate = useNavigate();
             <h2 className="text-sm text-gray-500 mb-2">{t("welcome")}</h2>
           </div>
 
-          <div className="mb-6 flex flex-col gap-100">
-            <div className="flex items-center border border-gray-300 rounded-lg p-3 focus-within:bg-[#0095da] focus-within:ring-2 focus-within:ring-blue-200">
+          <form className="mb-6 flex flex-col gap-100">
+            <div className="flex items-center border border-gray-300 rounded-lg p-3 focus-within:bg-[#] focus-within:ring-2 focus-within:ring-blue-200">
               <span className="text-gray-600 ml-2">+98</span>
               <input
+                {...register("phoneNumber", {
+                  minLength: 11,
+                  required: true,
+                })}
                 type="tel"
                 placeholder={t("phone")}
                 className="flex-1 outline-none text-right placeholder:text-gray-400"
               />
             </div>
-            <button onClick={() => navigate("/Password")} className="w-full bg-[#0095da] text-white py-3 rounded-lg font-medium hover:bg-[#0095da] transition-colors">
+            <button
+              onClick={() => {
+                changePage("/password");
+              }}
+              className="w-full bg-[#0095da] text-white py-3 rounded-lg font-medium hover:bg-[#0095da] transition-colors"
+            >
               {t("confirm_button")}
             </button>
-          </div>
-
-          <div className="flex flex-row gap-5 p-8">
-            <button
-              onClick={() => i18n.changeLanguage("fa")}
-              className=" bg-[#0095da] p-4"
-            >
-              فارسی
-            </button>
-            <button
-              onClick={() => i18n.changeLanguage("en")}
-              className=" bg-[#0095da] p-4"
-            >
-              English
-            </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>
