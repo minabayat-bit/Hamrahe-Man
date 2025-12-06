@@ -1,3 +1,4 @@
+import { useState } from "react";
 import s1 from "../assets/img/story1.jpeg";
 import s2 from "../assets/img/story2.jpg";
 import s3 from "../assets/img/story3.jpg";
@@ -15,7 +16,18 @@ import Donut from "../components/Donut";
 import "../i18next/index";
 import { useTranslation } from "react-i18next";
 
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper/modules";
+interface SelectedImage {
+  img: string;
+  label: string;
+}
+
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -26,6 +38,13 @@ import "swiper/css/scrollbar";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
+
+  const [selectedImage, setSelectedImage] = useState<SelectedImage | null>(
+    null
+  );
+  const handleImageClick = (imgSrc: string, label: string) => {
+    setSelectedImage({ img: imgSrc, label: label });
+  };
 
   return (
     <div className="bg-gray-100 h-full">
@@ -168,67 +187,89 @@ const Home = () => {
       </div>
       {/* //story */}
       <div className="bg-white rounded-sm m-2 p-2">
-        <Swiper className="swiper1"
+        <Swiper
+          className="swiper1"
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={5}
           slidesPerView={4}
-         
           // pagination={{ clickable: true }}
           // scrollbar={{ draggable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
         >
-          <SwiperSlide>
+          <SwiperSlide onClick={() => handleImageClick(s1, t("s1"))}>
             {" "}
             <div className="flex flex-col justify-center items-center text-sm gap-2">
               <img src={s1} />
               <span>{t("s1")}</span>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide onClick={() => handleImageClick(s2, t("s2"))}>
             <div className="flex flex-col justify-center items-center text-sm gap-2">
               <img src={s2} />
               <span>{t("s2")}</span>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide onClick={() => handleImageClick(s3, t("s3"))}>
             {" "}
             <div className="flex flex-col justify-center items-center text-sm gap-2">
               <img src={s3} />
               <span>{t("s3")}</span>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide onClick={() => handleImageClick(s4, t("s4"))}>
             {" "}
             <div className="flex flex-col justify-center items-center text-sm gap-2">
               <img src={s4} />
               <span>{t("s4")}</span>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide onClick={() => handleImageClick(s5, t("s5"))}>
             {" "}
             <div className="flex flex-col justify-center items-center text-[13px] gap-2">
               <img src={s5} />
               <span>{t("s5")}</span>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide onClick={() => handleImageClick(s6, t("s6"))}>
             {" "}
             <div className="flex flex-col justify-center items-center text-sm gap-2">
               <img src={s6} />
               <span>{t("s6")}</span>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
+          <SwiperSlide onClick={() => handleImageClick(s7, t("s7"))}>
             <div className="flex flex-col justify-center items-center text-sm gap-2">
               <img src={s7} />
               <span>{t("s7")}</span>
             </div>
           </SwiperSlide>
         </Swiper>
+
+        {selectedImage && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+
+              zIndex: 9999,
+            }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <img
+              src={selectedImage.img}
+             
+              style={{
+                width: "100vh",
+                height: "100vh",
+              }}
+            />
+          </div>
+        )}
       </div>
       {/* chart */}
-      <div className="bg-white p-6 flex flex-row m-2 rounded-sm text-gray-500">
+      <div className="bg-white p-4 flex flex-row m-2 rounded-sm text-gray-500">
         <div className="flex flex-col items-center">
           <span>{t("conversation")}</span>
           <Donut />
@@ -291,7 +332,7 @@ const Home = () => {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              // fit=""
               height="100%"
               width="100%"
               preserveAspectRatio="xMidYMid meet"
@@ -336,7 +377,7 @@ const Home = () => {
               fill="none"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
-              fit=""
+              // fit=""
               height="100%"
               width="100%"
               preserveAspectRatio="xMidYMid meet"
@@ -381,37 +422,99 @@ const Home = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-2">
           <button className="flex p-2 rounded-2xl border border-gray-300 bg-white">
-            <svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fit="" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19.5a2.5 2.5 0 002.5-2.5 2.5 2.5 0 002.5 2.5 2.5 2.5 0 00-2.5 2.5 2.5 2.5 0 00-2.5-2.5z"></path><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.239 18.913a.937.937 0 10-1.326 1.326.937.937 0 001.326-1.326zM5 5a2 2 0 002-2 2 2 0 002 2 2 2 0 00-2 2 2 2 0 00-2-2z"></path><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.59 4.53a.75.75 0 10-1.06 1.061.75.75 0 001.06-1.06z"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.055 2.93l.578-.455a2.205 2.205 0 012.734 0l.578.455c.41.323.917.49 1.436.474l.732-.023a2.225 2.225 0 012.204 1.62l.211.738c.143.5.454.934.88 1.228l.625.434a2.257 2.257 0 01.837 2.606l-.26.738a2.267 2.267 0 000 1.51l.26.738c.271.766.107 1.602-.393 2.201M3.967 7.401a2.257 2.257 0 00-.837 2.606l.26.738a2.266 2.266 0 010 1.51l-.26.738c-.34.96.004 2.03.837 2.606l.626.434c.425.294.736.728.879 1.228l.21.738a2.225 2.225 0 002.205 1.62l.732-.023a2.208 2.208 0 011.436.474l.578.455c.402.317.884.475 1.367.475M14.5 9.5l-5 5M9.5 14.5l2.938-2.938c.76-.76 2.062-.222 2.062.855v0"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.5 14.5l2.938-2.938c.76-.76.222-2.062-.855-2.062v0"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.334 9.5H14.5v4.167"></path></svg>
+            <svg
+              className="w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              height="100%"
+              width="100%"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+            >
+              <defs></defs>
+              <path
+                stroke="#ff4f00"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M15 19.5a2.5 2.5 0 002.5-2.5 2.5 2.5 0 002.5 2.5 2.5 2.5 0 00-2.5 2.5 2.5 2.5 0 00-2.5-2.5z"
+              ></path>
+              <path
+                stroke="#ff4f00"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M18.239 18.913a.937.937 0 10-1.326 1.326.937.937 0 001.326-1.326zM5 5a2 2 0 002-2 2 2 0 002 2 2 2 0 00-2 2 2 2 0 00-2-2z"
+              ></path>
+              <path
+                stroke="#ff4f00"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M7.59 4.53a.75.75 0 10-1.06 1.061.75.75 0 001.06-1.06z"
+              ></path>
+              <path
+                stroke="#0095da"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M10.055 2.93l.578-.455a2.205 2.205 0 012.734 0l.578.455c.41.323.917.49 1.436.474l.732-.023a2.225 2.225 0 012.204 1.62l.211.738c.143.5.454.934.88 1.228l.625.434a2.257 2.257 0 01.837 2.606l-.26.738a2.267 2.267 0 000 1.51l.26.738c.271.766.107 1.602-.393 2.201M3.967 7.401a2.257 2.257 0 00-.837 2.606l.26.738a2.266 2.266 0 010 1.51l-.26.738c-.34.96.004 2.03.837 2.606l.626.434c.425.294.736.728.879 1.228l.21.738a2.225 2.225 0 002.205 1.62l.732-.023a2.208 2.208 0 011.436.474l.578.455c.402.317.884.475 1.367.475M14.5 9.5l-5 5M9.5 14.5l2.938-2.938c.76-.76 2.062-.222 2.062.855v0"
+              ></path>
+              <path
+                stroke="#0095da"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9.5 14.5l2.938-2.938c.76-.76.222-2.062-.855-2.062v0"
+              ></path>
+              <path
+                stroke="#0095da"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M10.334 9.5H14.5v4.167"
+              ></path>
+            </svg>
           </button>
           <span>{t("encouragement")}</span>
         </div>
       </div>
       {/* slider */}
       <div className="bg-white p-4 m-2 rounded-sm ">
-         <Swiper
-      
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      spaceBetween={50}
-      slidesPerView={1}
-      
-      pagination={{ clickable: true }}
-      // scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-       autoplay={{
-        delay: 3000, 
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true, 
-      }}
-    >
-      <SwiperSlide><img src={sl1} /></SwiperSlide>
-      <SwiperSlide><img src={sl2} /></SwiperSlide>
-      <SwiperSlide><img src={sl3} /></SwiperSlide>
-      <SwiperSlide><img src={sl4} /></SwiperSlide>
-      <SwiperSlide><img src={sl5} /></SwiperSlide>
-      <SwiperSlide><img src={sl6} /></SwiperSlide>
-     
-    </Swiper>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          spaceBetween={50}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          // scrollbar={{ draggable: true }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+        >
+          <SwiperSlide>
+            <img src={sl1} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sl2} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sl3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sl4} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sl5} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src={sl6} />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
