@@ -12,10 +12,10 @@ const Donut: React.FC = () => {
     stroke: {
       show: true,
       width: 8,
-      colors: ["#f0f3ff"], // بدون خط داخلی
+      colors: ["#f0f3ff"], 
     },
     fill: {
-      colors: ["#fff"], // وسط دونات سفید
+      colors: ["#fff"], 
     },
     plotOptions: {
       pie: {
@@ -24,7 +24,7 @@ const Donut: React.FC = () => {
         }
       }
     },
-    colors: ["#a0aec0"], // حلقه طوسی (می‌تونی #a0aec0 رو با درصد آبی کم تغییر بدی)
+    colors: ["#a0aec0"], 
     dataLabels: {
       enabled: false,
     },
@@ -36,7 +36,6 @@ const Donut: React.FC = () => {
     }
   };
 
-  // فقط یک بخش اضافه می‌کنیم تا دونات نمایش داده شود
   const series = [100];
 
   return (
