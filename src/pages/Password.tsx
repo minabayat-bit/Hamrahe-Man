@@ -9,7 +9,7 @@ function Password() {
   const navigate = useNavigate();
 
   const [code, setCode] = useState<string[]>(["", "", "", "", ""]);
-  const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
+  const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
 
   const handleChange = (value: string, index: number) => {
     const newCode = [...code];
@@ -44,7 +44,7 @@ function Password() {
               {code.map((digit, index) => (
                 <input
                   key={index}
-                  ref={(el) => (inputsRef.current[index] = el)}
+                  ref={(el) => { if (el) inputsRef.current[index] = el;}}
                   type="text"
                   maxLength={1}
                   value={digit}

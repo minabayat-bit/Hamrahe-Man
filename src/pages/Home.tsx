@@ -289,7 +289,7 @@ const Home = () => {
           <h3>{t("Interim_Bill")}</h3>
           <span>ریال</span>
         </div>
-        <button className="bg-orange-600 py-3 px-4 rounded-sm text-white">
+        <button className="bg-orange-600 py-3 px-4 rounded-2xl text-white">
           {t("Details_Pay")}
         </button>
       </div>
