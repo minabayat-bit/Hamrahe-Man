@@ -1,5 +1,6 @@
 import i18next from "i18next";
 import { initReactI18next } from "react-i18next";
+import Invoice from "../pages/Invoice";
 
 i18next.use(initReactI18next).init({
   resources: {
@@ -25,9 +26,17 @@ i18next.use(initReactI18next).init({
         s7: "خدمت در محل",
         Interim_Bill: "صورت حساب میان‌دوره:",
         Details_Pay: " جزییات و پرداخت ",
-        encouragement:"تشویقی",
-        Suggestion:"پیشنهادی",
-        Charging_service:"خدمات شارژ",
+        encouragement: "تشویقی",
+        Suggestion: "پیشنهادی",
+        Charging_service: "خدمات شارژ",
+        my_invoice: "صورت حساب من",
+        debt_installment: "تسقیط بدهی",
+        increase_indebtedness: " افزایش بستانکاری ",
+        mid_course:"میان‌دوره",
+        end_course:"پایان‌دوره",
+        change_phone:"تغییر شماره همراه",
+
+
       },
     },
     en: {
@@ -52,9 +61,15 @@ i18next.use(initReactI18next).init({
         s7: "On-site Service",
         Interim_Bill: "Interim Bill Statement",
         Details_Pay: "View Details & Pay",
-         encouragement:"encouragement",
-        Suggestion:"پیشنهادی",
-        Charging_service:"خدمات شارژ",
+        encouragement: "encouragement",
+        Suggestion: "Suggestion",
+        Charging_service: " Charging service",
+        my_invoice: "My Invoice",
+        debt_installment: "debt-installment",
+        increase_indebtedness: "increase indebtedness",
+        mid_course:"mid course",
+        end_course:"end course",
+        change_phone:"Change Phone Number",
       },
     },
   },

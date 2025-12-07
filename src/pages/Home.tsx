@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import s1 from "../assets/img/story1.jpeg";
 import s2 from "../assets/img/story2.jpg";
 import s3 from "../assets/img/story3.jpg";
@@ -35,7 +36,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { useNavigate } from "react-router";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -261,7 +261,6 @@ const Home = () => {
           >
             <img
               src={selectedImage.img}
-             
               style={{
                 width: "100vh",
                 height: "100vh",
@@ -520,11 +519,150 @@ const Home = () => {
       </div>
       {/* footer */}
       <footer className="bg-white p-4 m-2 rounded-sm flex flex-row gap-4">
-        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white"><svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"  height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 20v-8.32a4 4 0 00-1.71-3.279l-4.008-2.8a4 4 0 00-4.585.004L5.705 8.4A4 4 0 004 11.677V20"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 20v-9.362a2 2 0 00-.855-1.64l-6.01-4.197a2 2 0 00-2.292.001l-5.99 4.196A2 2 0 004 10.636V20"></path><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.5 20v-4a2 2 0 012-2h1a2 2 0 012 2v4"></path></svg></button>
-        <button onClick={() => navigate("/Invoice")} className="flex p-2 rounded-2xl border border-gray-300 bg-white"><svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"  height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><path fill="#0095da" d="M4.975 3.55l.714-.232a.75.75 0 00-1.094-.415l.38.646zm14.05 0l.38-.647a.75.75 0 00-1.094.415l.713.231zM15.554 3h.75a.75.75 0 00-.75-.75V3zm-1.777 0v-.75a.75.75 0 00-.75.75h.75zm-3.556 0h.75a.75.75 0 00-.75-.75V3zM8.444 3v-.75a.75.75 0 00-.75.75h.75zM3.75 7c0-1.194.643-2.238 1.606-2.804l-.76-1.293A4.748 4.748 0 002.25 7h1.5zm0 10V7h-1.5v10h1.5zM7 20.25A3.25 3.25 0 013.75 17h-1.5A4.75 4.75 0 007 21.75v-1.5zm10 0H7v1.5h10v-1.5zM20.25 17A3.25 3.25 0 0117 20.25v1.5A4.75 4.75 0 0021.75 17h-1.5zm0-10v10h1.5V7h-1.5zm-1.606-2.804A3.248 3.248 0 0120.25 7h1.5a4.748 4.748 0 00-2.345-4.097l-.76 1.293zm-1.31 1.332a2.529 2.529 0 002.404-1.747l-1.427-.463c-.134.413-.522.71-.978.71v1.5zM14.805 3a2.528 2.528 0 002.527 2.528v-1.5c-.567 0-1.027-.46-1.027-1.028h-1.5zm-1.028.75h1.777v-1.5h-1.777v1.5zm-.75-.75c0 .568-.46 1.028-1.028 1.028v1.5A2.528 2.528 0 0014.528 3h-1.5zM12 4.028c-.568 0-1.028-.46-1.028-1.028h-1.5A2.528 2.528 0 0012 5.528v-1.5zM8.444 3.75h1.778v-1.5H8.444v1.5zM7.694 3c0 .568-.46 1.028-1.027 1.028v1.5A2.528 2.528 0 009.194 3h-1.5zM6.667 4.028c-.456 0-.844-.297-.978-.71l-1.427.463a2.529 2.529 0 002.405 1.747v-1.5z"></path><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11h-4.8m-2.8 0H8M16 15h-4.8m-2.8 0H8"></path></svg></button>
-        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white"><svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"  height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><path fill="#0095da" d="M4.975 3.55l.714-.232a.75.75 0 00-1.094-.415l.38.646zm14.05 0l.38-.647a.75.75 0 00-1.094.415l.713.231zM15.554 3h.75a.75.75 0 00-.75-.75V3zm-1.777 0v-.75a.75.75 0 00-.75.75h.75zm-3.556 0h.75a.75.75 0 00-.75-.75V3zM8.444 3v-.75a.75.75 0 00-.75.75h.75zM3.75 7c0-1.194.643-2.238 1.606-2.804l-.76-1.293A4.748 4.748 0 002.25 7h1.5zm0 10V7h-1.5v10h1.5zM7 20.25A3.25 3.25 0 013.75 17h-1.5A4.75 4.75 0 007 21.75v-1.5zm10 0H7v1.5h10v-1.5zM20.25 17A3.25 3.25 0 0117 20.25v1.5A4.75 4.75 0 0021.75 17h-1.5zm0-10v10h1.5V7h-1.5zm-1.606-2.804A3.248 3.248 0 0120.25 7h1.5a4.748 4.748 0 00-2.345-4.097l-.76 1.293zm-1.31 1.332a2.529 2.529 0 002.404-1.747l-1.427-.463c-.134.413-.522.71-.978.71v1.5zM14.805 3a2.528 2.528 0 002.527 2.528v-1.5c-.567 0-1.027-.46-1.027-1.028h-1.5zm-1.028.75h1.777v-1.5h-1.777v1.5zm-.75-.75c0 .568-.46 1.028-1.028 1.028v1.5A2.528 2.528 0 0014.528 3h-1.5zM12 4.028c-.568 0-1.028-.46-1.028-1.028h-1.5A2.528 2.528 0 0012 5.528v-1.5zM8.444 3.75h1.778v-1.5H8.444v1.5zM7.694 3c0 .568-.46 1.028-1.027 1.028v1.5A2.528 2.528 0 009.194 3h-1.5zM6.667 4.028c-.456 0-.844-.297-.978-.71l-1.427.463a2.529 2.529 0 002.405 1.747v-1.5z"></path><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11h-4.8m-2.8 0H8M16 15h-4.8m-2.8 0H8"></path></svg></button>
-        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white"><svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"  height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.31 6.872c-.723.307-1.341.483-1.756.501-.416.019-.606-.122-.542-.4.065-.278.38-.678.898-1.137.518-.46 1.21-.954 1.967-1.405.757-.452 1.539-.836 2.224-1.093.684-.257 1.234-.372 1.563-.33.33.044.42.244.258.57-.163.326-.568.76-1.155 1.234"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.7 7.375c.47.02.834.097 1.056.225.222.129.294.304.21.508-.085.204-.323.43-.692.657a7.228 7.228 0 01-1.413.637c-.558.19-1.167.346-1.768.45a9.02 9.02 0 01-1.66.147c-.489-.008-.876-.076-1.124-.195-.249-.12-.35-.287-.294-.486M5 21h3a2 2 0 002-2v-3a2 2 0 00-2-2H5a2 2 0 00-2 2v3a2 2 0 002 2zM16 21h3a2 2 0 002-2v-3a2 2 0 00-2-2h-3a2 2 0 00-2 2v3a2 2 0 002 2zM3 8V5a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg></button>
-        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white"><svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.31 6.872c-.723.307-1.341.483-1.756.501-.416.019-.606-.122-.542-.4.065-.278.38-.678.898-1.137.518-.46 1.21-.954 1.967-1.405.757-.452 1.539-.836 2.224-1.093.684-.257 1.234-.372 1.563-.33.33.044.42.244.258.57-.163.326-.568.76-1.155 1.234"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.7 7.375c.47.02.834.097 1.056.225.222.129.294.304.21.508-.085.204-.323.43-.692.657a7.228 7.228 0 01-1.413.637c-.558.19-1.167.346-1.768.45a9.02 9.02 0 01-1.66.147c-.489-.008-.876-.076-1.124-.195-.249-.12-.35-.287-.294-.486M5 21h3a2 2 0 002-2v-3a2 2 0 00-2-2H5a2 2 0 00-2 2v3a2 2 0 002 2zM16 21h3a2 2 0 002-2v-3a2 2 0 00-2-2h-3a2 2 0 00-2 2v3a2 2 0 002 2zM3 8V5a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path></svg></button>
+        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white">
+          <svg
+            className="w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            preserveAspectRatio="xMidYMid meet"
+            focusable="false"
+          >
+            <defs></defs>
+            <path
+              stroke="#0095da"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M20 20v-8.32a4 4 0 00-1.71-3.279l-4.008-2.8a4 4 0 00-4.585.004L5.705 8.4A4 4 0 004 11.677V20"
+            ></path>
+            <path
+              stroke="#0095da"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M20 20v-9.362a2 2 0 00-.855-1.64l-6.01-4.197a2 2 0 00-2.292.001l-5.99 4.196A2 2 0 004 10.636V20"
+            ></path>
+            <path
+              stroke="#ff4f00"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M9.5 20v-4a2 2 0 012-2h1a2 2 0 012 2v4"
+            ></path>
+          </svg>
+        </button>
+        <button
+          onClick={() => navigate("/Invoice")}
+          className="flex p-2 rounded-2xl border border-gray-300 bg-white"
+        >
+          <svg
+            className="w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            preserveAspectRatio="xMidYMid meet"
+            focusable="false"
+          >
+            <defs></defs>
+            <path
+              fill="#0095da"
+              d="M4.975 3.55l.714-.232a.75.75 0 00-1.094-.415l.38.646zm14.05 0l.38-.647a.75.75 0 00-1.094.415l.713.231zM15.554 3h.75a.75.75 0 00-.75-.75V3zm-1.777 0v-.75a.75.75 0 00-.75.75h.75zm-3.556 0h.75a.75.75 0 00-.75-.75V3zM8.444 3v-.75a.75.75 0 00-.75.75h.75zM3.75 7c0-1.194.643-2.238 1.606-2.804l-.76-1.293A4.748 4.748 0 002.25 7h1.5zm0 10V7h-1.5v10h1.5zM7 20.25A3.25 3.25 0 013.75 17h-1.5A4.75 4.75 0 007 21.75v-1.5zm10 0H7v1.5h10v-1.5zM20.25 17A3.25 3.25 0 0117 20.25v1.5A4.75 4.75 0 0021.75 17h-1.5zm0-10v10h1.5V7h-1.5zm-1.606-2.804A3.248 3.248 0 0120.25 7h1.5a4.748 4.748 0 00-2.345-4.097l-.76 1.293zm-1.31 1.332a2.529 2.529 0 002.404-1.747l-1.427-.463c-.134.413-.522.71-.978.71v1.5zM14.805 3a2.528 2.528 0 002.527 2.528v-1.5c-.567 0-1.027-.46-1.027-1.028h-1.5zm-1.028.75h1.777v-1.5h-1.777v1.5zm-.75-.75c0 .568-.46 1.028-1.028 1.028v1.5A2.528 2.528 0 0014.528 3h-1.5zM12 4.028c-.568 0-1.028-.46-1.028-1.028h-1.5A2.528 2.528 0 0012 5.528v-1.5zM8.444 3.75h1.778v-1.5H8.444v1.5zM7.694 3c0 .568-.46 1.028-1.027 1.028v1.5A2.528 2.528 0 009.194 3h-1.5zM6.667 4.028c-.456 0-.844-.297-.978-.71l-1.427.463a2.529 2.529 0 002.405 1.747v-1.5z"
+            ></path>
+            <path
+              stroke="#ff4f00"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M16 11h-4.8m-2.8 0H8M16 15h-4.8m-2.8 0H8"
+            ></path>
+          </svg>
+        </button>
+        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white">
+          <svg
+            className="w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            preserveAspectRatio="xMidYMid meet"
+            focusable="false"
+          >
+            <defs></defs>
+            <path
+              fill="#0095da"
+              d="M4.975 3.55l.714-.232a.75.75 0 00-1.094-.415l.38.646zm14.05 0l.38-.647a.75.75 0 00-1.094.415l.713.231zM15.554 3h.75a.75.75 0 00-.75-.75V3zm-1.777 0v-.75a.75.75 0 00-.75.75h.75zm-3.556 0h.75a.75.75 0 00-.75-.75V3zM8.444 3v-.75a.75.75 0 00-.75.75h.75zM3.75 7c0-1.194.643-2.238 1.606-2.804l-.76-1.293A4.748 4.748 0 002.25 7h1.5zm0 10V7h-1.5v10h1.5zM7 20.25A3.25 3.25 0 013.75 17h-1.5A4.75 4.75 0 007 21.75v-1.5zm10 0H7v1.5h10v-1.5zM20.25 17A3.25 3.25 0 0117 20.25v1.5A4.75 4.75 0 0021.75 17h-1.5zm0-10v10h1.5V7h-1.5zm-1.606-2.804A3.248 3.248 0 0120.25 7h1.5a4.748 4.748 0 00-2.345-4.097l-.76 1.293zm-1.31 1.332a2.529 2.529 0 002.404-1.747l-1.427-.463c-.134.413-.522.71-.978.71v1.5zM14.805 3a2.528 2.528 0 002.527 2.528v-1.5c-.567 0-1.027-.46-1.027-1.028h-1.5zm-1.028.75h1.777v-1.5h-1.777v1.5zm-.75-.75c0 .568-.46 1.028-1.028 1.028v1.5A2.528 2.528 0 0014.528 3h-1.5zM12 4.028c-.568 0-1.028-.46-1.028-1.028h-1.5A2.528 2.528 0 0012 5.528v-1.5zM8.444 3.75h1.778v-1.5H8.444v1.5zM7.694 3c0 .568-.46 1.028-1.027 1.028v1.5A2.528 2.528 0 009.194 3h-1.5zM6.667 4.028c-.456 0-.844-.297-.978-.71l-1.427.463a2.529 2.529 0 002.405 1.747v-1.5z"
+            ></path>
+            <path
+              stroke="#ff4f00"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M16 11h-4.8m-2.8 0H8M16 15h-4.8m-2.8 0H8"
+            ></path>
+          </svg>
+        </button>
+        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white">
+          <svg
+            className="w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            preserveAspectRatio="xMidYMid meet"
+            focusable="false"
+          >
+            <defs></defs>
+            <path
+              stroke="#ff4f00"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M16.31 6.872c-.723.307-1.341.483-1.756.501-.416.019-.606-.122-.542-.4.065-.278.38-.678.898-1.137.518-.46 1.21-.954 1.967-1.405.757-.452 1.539-.836 2.224-1.093.684-.257 1.234-.372 1.563-.33.33.044.42.244.258.57-.163.326-.568.76-1.155 1.234"
+            ></path>
+            <path
+              stroke="#0095da"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M19.7 7.375c.47.02.834.097 1.056.225.222.129.294.304.21.508-.085.204-.323.43-.692.657a7.228 7.228 0 01-1.413.637c-.558.19-1.167.346-1.768.45a9.02 9.02 0 01-1.66.147c-.489-.008-.876-.076-1.124-.195-.249-.12-.35-.287-.294-.486M5 21h3a2 2 0 002-2v-3a2 2 0 00-2-2H5a2 2 0 00-2 2v3a2 2 0 002 2zM16 21h3a2 2 0 002-2v-3a2 2 0 00-2-2h-3a2 2 0 00-2 2v3a2 2 0 002 2zM3 8V5a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+            ></path>
+          </svg>
+        </button>
+        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white">
+          <svg
+            className="w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            height="100%"
+            width="100%"
+            preserveAspectRatio="xMidYMid meet"
+            focusable="false"
+          >
+            <defs></defs>
+            <path
+              stroke="#ff4f00"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M16.31 6.872c-.723.307-1.341.483-1.756.501-.416.019-.606-.122-.542-.4.065-.278.38-.678.898-1.137.518-.46 1.21-.954 1.967-1.405.757-.452 1.539-.836 2.224-1.093.684-.257 1.234-.372 1.563-.33.33.044.42.244.258.57-.163.326-.568.76-1.155 1.234"
+            ></path>
+            <path
+              stroke="#0095da"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M19.7 7.375c.47.02.834.097 1.056.225.222.129.294.304.21.508-.085.204-.323.43-.692.657a7.228 7.228 0 01-1.413.637c-.558.19-1.167.346-1.768.45a9.02 9.02 0 01-1.66.147c-.489-.008-.876-.076-1.124-.195-.249-.12-.35-.287-.294-.486M5 21h3a2 2 0 002-2v-3a2 2 0 00-2-2H5a2 2 0 00-2 2v3a2 2 0 002 2zM16 21h3a2 2 0 002-2v-3a2 2 0 00-2-2h-3a2 2 0 00-2 2v3a2 2 0 002 2zM3 8V5a2 2 0 012-2h3a2 2 0 012 2v3a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+            ></path>
+          </svg>
+        </button>
       </footer>
       <div className="h-20"></div>
     </div>
