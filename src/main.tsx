@@ -7,6 +7,8 @@ import Login from "./pages/Login";
 import Password from "./pages/Password";
 import Home from "./pages/Home";
 import Invoice from "./pages/Invoice";
+import Packages from "./pages/Packages";
+import Servises from "./pages/Servises";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
   {
     path: "/Invoice",
     element: <Invoice />
+  },
+  {
+    path: "/Packages",
+    element: <Packages />
+  },
+  {
+    path: "/servises",
+    element: <Servises />
   }
 ]);
 

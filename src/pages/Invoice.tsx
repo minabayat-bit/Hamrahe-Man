@@ -145,6 +145,7 @@ const Invoice = () => {
           <h2></h2>
         </div>
       </div>
+      <button className='w-full bg-orange-600 text-white text-[20px] rounded-[20px] p-4'>پرداخت صورت حساب</button>
       </div> )}
       {/* debt */}
       {activeTab === "debt" && (
@@ -181,6 +182,16 @@ const Invoice = () => {
             <div className="h-[1.2px] bg-gray-300 w-full mt-4"></div>
             <h2 className="text-gray-600 text-[20px]"> مبلغ بستانکاری (ریال) </h2>
           </div>
+          <div className="*:px-4 *:py-2 *:bg-gray-300 flex flex-wrap gap-2 *:text-gray-600 *:rounded-2xl">
+          <button>500000</button>
+          <button>1000000</button>
+          <button>1500000</button>
+          <button>200000</button>
+          <button>2500000</button>
+          <button>5000000</button>
+          <button>مبلغ دلخواه</button>
+          </div>
+          
         </div>
       )}
 

@@ -9,7 +9,7 @@ const Footer = () => {
     <div>
       <footer className="bg-white p-4 py-8 rounded-t-md flex flex-row gap-6 justify-center">
         <div className='flex flex-col justify-center items-center text-4 text-gray-500 gap-2'>
-        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white">
+        <button onClick={() => navigate("/Home")} className="flex p-2 rounded-2xl border border-gray-300 bg-white">
           <svg
             className="w-8"
             fill="none"
@@ -78,13 +78,13 @@ const Footer = () => {
         <span>صورت‌حساب</span>
         </div>
         <div className='flex flex-col justify-center items-center text-4 text-gray-500 gap-2'>
-        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white">
+        <button onClick={() => navigate("/Packages")} className="flex p-2 rounded-2xl border border-gray-300 bg-white">
          <svg className='w-8' fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"  height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v-.818a3 3 0 011.436-2.56l.564-.344 1-.611.5-.306"></path><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.5 10.361l-.5.306-1 .61-.436.267a3 3 0 01-3.128 0L10 11.278l-1-.611-.5-.306"></path><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15.5v-1.318a3 3 0 00-1.436-2.56L10 11.279l-.5-.306-.5-.305"></path><path stroke="#0095da" stroke-linejoin="round" stroke-width="1.5" d="M9.572 3.349a5 5 0 014.856 0l4 2.222A5 5 0 0121 9.942v4.116a5 5 0 01-2.572 4.37l-4 2.223a5 5 0 01-4.856 0l-4-2.222A5 5 0 013 14.058V9.942a5 5 0 012.572-4.37l4-2.223z"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12V9.637a1.479 1.479 0 00-2.25-1.262v0l-1.125.688"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 4.5l2.195 1.22a1.537 1.537 0 01.055 2.655v0l-1.125.688"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 4.5l2.25 1.25a1.5 1.5 0 01.055 2.592l-.055.033-1.125.688M3 12V9.637a1.479 1.479 0 012.25-1.262v0l1.125.688"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 4.5L5.25 5.75a1.5 1.5 0 00-.055 2.592l.055.033 1.125.688"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7.5 4.5L5.25 5.75a1.5 1.5 0 00-.055 2.592l.055.033 1.125.688M12 18v1.45a1.5 1.5 0 01-2.228 1.312L7.5 19.5"></path><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18v1.45a1.5 1.5 0 002.229 1.312L16.5 19.5"></path></svg>
         </button>
         <span>بسته ها</span>
         </div>
         <div className='flex flex-col justify-center items-center text-4 text-gray-500 gap-2'>
-        <button className="flex p-2 rounded-2xl border border-gray-300 bg-white">
+        <button onClick={() => navigate("/Servises")} className="flex p-2 rounded-2xl border border-gray-300 bg-white">
           <svg
             className="w-8"
             fill="none"
