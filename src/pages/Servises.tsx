@@ -7,11 +7,11 @@ import png2 from "../assets/img/bservice2.jpg";
 import png3 from "../assets/img/bservice3.jpg";
 import png4 from "../assets/img/bservice4.jpg";
 
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Footer from "../components/Footer";
 
 const Servises = () => {
   return (
@@ -51,17 +51,17 @@ const Servises = () => {
         </SwiperSlide>
       </Swiper>
 
+      <h2 className="p-6 text-2xl font-semibold flex flex-row items-center gap-2">
+        {" "}
+        <div className="w-3 h-3 bg-blue-400 rounded-full"></div>خدمات پرکاربرد
+      </h2>
 
-      <h2 className="p-6 text-2xl font-semibold flex flex-row items-center gap-2"> <div className="w-3 h-3 bg-blue-400 rounded-full"></div>خدمات پرکاربرد</h2>
-
-
-      
-        <div className="flex flex-col  p-4 gap-2  pb-24">
-        
+      <div className="flex flex-col  p-4 gap-2">
         <div className="bg-white p-4 grid grid-cols-4 gap-4 rounded-lg">
           <div className="flex flex-col gap-4  items-center justify-center">
             <div className="bg-gray-100 p-2 rounded-lg">
-              <svg className="w-8"
+              <svg
+                className="w-8"
                 fill="none"
                 viewBox="0 0 25 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,8 @@ const Servises = () => {
           </div>
           <div className="flex flex-col gap-4  items-center justify-center">
             <div className="bg-gray-100 p-2 rounded-lg">
-              <svg className="w-8"
+              <svg
+                className="w-8"
                 fill="none"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
@@ -157,9 +158,7 @@ const Servises = () => {
                 ></path>
               </svg>
             </div>
-            <p className="text-[10px]">
-              خلاصه کارکرد
-            </p>
+            <p className="text-[10px]">خلاصه کارکرد</p>
           </div>
           <div className="flex flex-col gap-4  items-center justify-center">
             <div className="bg-gray-100 p-2 rounded-lg">
@@ -281,22 +280,264 @@ const Servises = () => {
             <p className="text-[10px]">قبض دیگران</p>
           </div>
         </div>
-
-
       </div>
-
 
       <div className="px-6 flex flex-row gap-3 rounded-md">
-        <img className="w-22" src={png1} />
-        <img className="w-22" src={png2} />
-        <img className="w-22" src={png3} />
-        <img className="w-22" src={png4} />
-
+        <img className="w-22 rounded-2xl" src={png1} />
+        <img className="w-22 rounded-2xl" src={png2} />
+        <img className="w-22 rounded-2xl" src={png3} />
+        <img className="w-22 rounded-2xl" src={png4} />
       </div>
 
+      <h2 className="p-6 text-2xl font-semibold flex flex-row items-center gap-2">
+        {" "}
+        <div className="w-3 h-3 bg-blue-400 rounded-full"></div>خدمات سیم کارت
+      </h2>
 
+      <div className="bg-white p-4 grid grid-cols-4 gap-2 rounded-lg">
+        <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              width="24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+            >
+              <defs></defs>
+              <path
+                stroke="#0095da"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M20 14.5v-3.32a4 4 0 00-1.002-2.648l-2.81-3.18A4 4 0 0013.19 4H6a4 4 0 00-4 4v6a4 4 0 004 4h8"
+              ></path>
+              <path
+                stroke="#0095da"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M6.5 14.5h5a1 1 0 001-1v-4a1 1 0 00-1-1h-5a1 1 0 00-1 1v4a1 1 0 001 1z"
+              ></path>
+              <path
+                fill="#ff4f00"
+                d="M14.824 15.248a.75.75 0 00.745-1.303l-.745 1.303zm.914-1.39a.75.75 0 001.5 0h-1.5zm-1.726 1.051l-.647-.378.647.378zm.29 1.199a.75.75 0 10-.744 1.302l.744-1.302zm-.686-.52l-.648-.377.648.378zm.314 1.171l-.372.651.372-.65zm-.314 2.652l-.647.378.647-.378zm7.06.34a.75.75 0 10-.743 1.303l.744-1.302zm-.371.652l-.372.651.372-.651zm.894-1.512a.75.75 0 00.744-1.302l-.744 1.302zm.685.519l.648.378-.648-.378zm-.313-1.17l-.372.651.372-.65zm-3.415-5.99h-.81v1.5h.81v-1.5zm4.377 2.962l-.397-.68-1.296.755.397.68 1.296-.755zm-1.296 3.82l-.397.68 1.296.756.396-.68-1.295-.756zm-3.891 3.718h.81v-1.5h-.81v1.5zm-4.377-2.961l.396.68 1.296-.757-.397-.679-1.295.756zm1.295-3.823l.396-.679-1.295-.756-.397.68 1.296.755zm.56-.718c1.059.604 2.414-.141 2.414-1.39h-1.5a.09.09 0 01-.012.049.125.125 0 01-.1.055.108.108 0 01-.057-.017l-.745 1.303zm-.164.04a.122.122 0 01.164-.04l.745-1.303a1.622 1.622 0 00-2.204.586l1.295.756zm-.358.82a.103.103 0 01-.038-.142l-1.296-.755a1.603 1.603 0 00.59 2.2l.744-1.303zm0 2.784a1.603 1.603 0 000-2.784l-.744 1.302c.07.04.069.14 0 .18l.744 1.302zm-.038.141a.103.103 0 01.038-.141l-.744-1.303a1.603 1.603 0 00-.59 2.2l1.296-.756zm.56.72a.122.122 0 01-.163-.04l-1.296.755a1.622 1.622 0 002.204.586l-.745-1.302zm2.414 1.39c0-1.25-1.355-1.996-2.414-1.39l.745 1.301a.109.109 0 01.058-.016.125.125 0 01.1.055.09.09 0 01.011.05h1.5zm.108.107a.107.107 0 01-.108-.107h-1.5c0 .887.72 1.607 1.608 1.607v-1.5zm.917-.107c0 .059-.048.107-.107.107v1.5c.888 0 1.607-.72 1.607-1.607h-1.5zm2.414-1.391c-1.06-.605-2.414.142-2.414 1.39h1.5a.09.09 0 01.013-.05.124.124 0 01.1-.055c.015 0 .034.004.057.017l.744-1.302zm.163-.04a.121.121 0 01-.163.04l-.744 1.302a1.621 1.621 0 002.203-.586l-1.296-.756zm.359-.82c.05.028.066.09.038.14l1.295.756a1.603 1.603 0 00-.589-2.199l-.744 1.302zm0-2.784a1.603 1.603 0 000 2.783l.744-1.302a.103.103 0 010-.178l-.744-1.303zm.038-.14a.103.103 0 01-.038.14l.744 1.303a1.603 1.603 0 00.59-2.2l-1.296.756zm-.56-.72a.122.122 0 01.163.04l1.296-.756a1.621 1.621 0 00-2.203-.587l.744 1.303zm-2.414-1.39c0 1.248 1.355 1.995 2.414 1.39l-.744-1.303a.109.109 0 01-.058.017.125.125 0 01-.1-.055.09.09 0 01-.012-.05h-1.5zm-.917-1.608c-.888 0-1.608.72-1.608 1.607h1.5c0-.059.048-.107.108-.107v-1.5zm.81 1.5c.06 0 .107.048.107.107h1.5c0-.887-.72-1.607-1.607-1.607v1.5z"
+              ></path>
+              <path
+                stroke="#ff4f00"
+                strokeLinecap="round"
+                strokeWidth="1.5"
+                d="M17.75 18.5a1 1 0 100-2 1 1 0 000 2z"
+              ></path>
+            </svg>
+          </div>
+          <p className="text-[10px]"></p>
+        </div>
+        <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              width="24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+            >
+              <defs></defs>
+              <g stroke="#ff4f00" strokeLinecap="round" strokeWidth="1.5">
+                <path d="M6.998 11.998h10.004M12 17a5.002 5.002 0 100-10.004A5.002 5.002 0 0012 17z"></path>
+                <path d="M12 17c1.105 0 2-2.24 2-5.002 0-2.762-.895-5.002-2-5.002s-2 2.24-2 5.002c0 2.763.895 5.002 2 5.002z"></path>
+              </g>
+              <path
+                stroke="#0095da"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M3 7a4 4 0 014-4h10a4 4 0 014 4v10a4 4 0 01-4 4H7a4 4 0 01-4-4V7z"
+              ></path>
+            </svg>
+          </div>
+          <p className="text-[10px]"></p>
+        </div>
+        <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              width="24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+            >
+              <defs></defs>
+              <path
+                stroke="#0095da"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M8.5 2.5H7a3 3 0 00-3 3v11a3 3 0 003 3h3m-1.5-17L9 3h2l.5-.5m-3 0h3m0 0H13a3 3 0 013 3V9"
+              ></path>
+              <path
+                stroke="#ff4f00"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M13 15h1.5m2.3 0h.2M13 18h1.5m2.3 0h.2M13 12h1.5m2.3 0h.2"
+              ></path>
+              <path
+                fill="#ff4f00"
+                d="M16.585 21.5v.75a.75.75 0 00.707-.5l-.707-.25zm-.172 0l-.706.252a.75.75 0 00.706.498v-.75zm2.787-.4l-.6.45a.75.75 0 001.05.15l-.45-.6zm-8.4 0l-.45.6a.75.75 0 001.05-.15l-.6-.45zm2.615.4l-.707.25c.105.3.389.5.707.5v-.75zm.172 0v.75c.317 0 .6-.2.706-.498l-.706-.252zm2.998-.75h-.172v1.5h.172v-1.5zm.707 1a.75.75 0 01.708-.5v-1.5a2.25 2.25 0 00-2.122 1.5l1.415.5zm.708-.5c.245 0 .462.116.6.3l1.2-.9a2.248 2.248 0 00-1.8-.9v1.5zm1.25-1.75c0 .408-.195.771-.5 1l.9 1.2c.667-.5 1.1-1.3 1.1-2.2h-1.5zm0-8.5v8.5h1.5V11h-1.5zM18 9.75c.69 0 1.25.56 1.25 1.25h1.5A2.75 2.75 0 0018 8.25v1.5zm-6 0h6v-1.5h-6v1.5zM10.75 11c0-.69.56-1.25 1.25-1.25v-1.5A2.75 2.75 0 009.25 11h1.5zm0 8.5V11h-1.5v8.5h1.5zm.5 1c-.305-.229-.5-.592-.5-1h-1.5c0 .9.433 1.7 1.1 2.2l.9-1.2zm.75-.75c-.737 0-1.39.355-1.8.9l1.2.9a.748.748 0 01.6-.3v-1.5zm2.122 1.5A2.25 2.25 0 0012 19.75v1.5a.75.75 0 01.707.5l1.415-.5zm-.535-.5h-.172v1.5h.172v-1.5zm.706 1.002a.75.75 0 01.707-.498v-1.5a2.25 2.25 0 00-2.12 1.494l1.413.504zm.707-.498a.75.75 0 01.707.498l1.413-.504A2.25 2.25 0 0015 19.754v1.5z"
+              ></path>
+            </svg>
+          </div>
+          <p className="text-[10px]"></p>
+        </div>
+        <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              width="24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+            >
+              <defs></defs>
+              <path
+                stroke="#ff4f00"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M9.125 17.561v2.062c0 .613.318 1.158.81 1.5a1.56 1.56 0 011.215-.563c.661 0 1.224.392 1.432.938h.175c.21-.545.77-.934 1.43-.934.66 0 1.222.39 1.431.934h.175c.208-.547.77-.938 1.432-.938.497 0 .938.221 1.215.563.492-.342.81-.887.81-1.5V14M13.5 6.312h3.75a2 2 0 012 2v1.47"
+              ></path>
+              <g stroke="#0095da" strokeLinejoin="round" strokeWidth="1.5">
+                <path d="M15.821 10.037l-2.487-2.595a1.578 1.578 0 01-.199-1.93A1.578 1.578 0 0013 3.653l-.876-1.027c-.57-.669-1.538-.894-2.143-.257-1.14 1.2-2.127 3.746 2.154 8.23 4.206 4.407 6.906 3.646 8.278 2.579.757-.59.55-1.668-.196-2.272l-.773-.628a1.446 1.446 0 00-1.744-.059 1.446 1.446 0 01-1.878-.181z"></path>
+                <path
+                  strokeLinecap="round"
+                  d="M16.357 14v1.135a2 2 0 01-2 2h-7.39c-.168 0-.335.021-.498.063l-2.969.764.747-3.073a2 2 0 00.057-.473V8.31a2 2 0 012-2H9"
+                ></path>
+              </g>
+            </svg>
+          </div>
+          <p className="text-[10px]"></p>
+        </div>
+        <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              width="24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+            >
+              <defs></defs>
+              <path
+                stroke="#ff4f00"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M15.5 11h-.202c-.82 0-1.596-.373-2.11-1.014l-2.377-2.972A2.702 2.702 0 008.701 6H8.5A2.5 2.5 0 006 8.5v0A2.5 2.5 0 008.5 11h.202c.82 0 1.596-.373 2.11-1.014l2.377-2.972A2.701 2.701 0 0115.299 6h.201A2.5 2.5 0 0118 8.5v0a2.5 2.5 0 01-2.5 2.5z"
+              ></path>
+              <g
+                stroke="#0095da"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+              >
+                <path d="M16.5 21h.5a4 4 0 004-4V7a4 4 0 00-4-4H7a4 4 0 00-4 4v10a4 4 0 004 4h.5M9 17.068L12 14m0 0l3 3.068M12 14v6"></path>
+                <path d="M15 17l-.78-.78c-.82-.82-2.22-.24-2.22.919V18.5M9 17l.78-.78c.82-.82 2.22-.24 2.22.919V21"></path>
+              </g>
+            </svg>
+          </div>
+          <p className="text-[10px]"></p>
+        </div>
+        <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <svg
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              height="24"
+              width="24"
+              preserveAspectRatio="xMidYMid meet"
+              focusable="false"
+            >
+              <defs></defs>
+              <path
+                stroke="#0095da"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                d="M15.5 19H7a4 4 0 01-4-4V7a4 4 0 014-4h8a4 4 0 014 4v6.222"
+              ></path>
+              <g stroke="#ff4f00" strokeWidth="1.5">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9.5 8v6L7 12"
+                ></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9.5 8v3.503c0 1.006-1.164 1.566-1.95.937L7 12M12.5 14V8l2.5 2"
+                ></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12.5 14v-3.503c0-1.006 1.164-1.566 1.95-.937L15 10"
+                ></path>
+                <path
+                  strokeLinecap="round"
+                  d="M21.11 16.934c.448.23.742.513.847.816.105.303.017.614-.254.895s-.714.52-1.274.69c-.561.17-1.217.261-1.889.265a6.885 6.885 0 01-1.9-.245c-.57-.163-1.024-.398-1.31-.676-.284-.278-.388-.588-.299-.892.09-.305.37-.591.805-.825"
+                ></path>
+                <path
+                  strokeLinecap="round"
+                  d="M21.11 19.334c.448.23.741.512.847.815.105.303.017.613-.252.894-.27.281-.711.52-1.27.69-.56.17-1.214.262-1.885.267a6.897 6.897 0 01-1.9-.242c-.57-.162-1.025-.396-1.313-.673-.287-.277-.394-.586-.308-.89.086-.305.362-.591.794-.826"
+                ></path>
+                <ellipse cx="18.5" cy="15.6" rx="3.5" ry="1.6"></ellipse>
+              </g>
+            </svg>
+          </div>
+        </div>
+         <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+            <svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"  height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><g stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><g stroke="#ff4f00"><path d="M12.029 11H7M11 14.5H7M12.029 7.5H7M14.771 7.5h.23M14.771 11h.23"></path></g><path stroke="#0095da" d="M14 19.5H6.5a3 3 0 01-3-3v-10a3 3 0 013-3h9a3 3 0 013 3v7"></path><g stroke="#ff4f00"><path d="M21.5 17.5a4 4 0 11-8 0 4 4 0 018 0zM20.304 14.96l-5.346 5.347"></path></g></g></svg>
+          </div>
+          <p className="text-[10px]"></p>
+        </div>
+         <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+
+            <svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"  height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><path stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 16.445H6a3 3 0 01-3-3V7a3 3 0 013-3h7.197a3 3 0 012.249 1.014l2.802 3.172A3 3 0 0119 10.172V12.5"></path><path fill="#ff4f00" d="M18.6 18.575l.531.528-.532-.528zm-3.155.563a3.694 3.694 0 01-3.694-3.694h-1.5a5.194 5.194 0 005.194 5.194v-1.5zm-3.694-3.694a3.694 3.694 0 013.694-3.694v-1.5a5.194 5.194 0 00-5.194 5.194h1.5zm3.694-3.694a3.694 3.694 0 013.694 3.694h1.5a5.194 5.194 0 00-5.194-5.194v1.5zm3.694 3.694a3.68 3.68 0 01-1.072 2.602l1.064 1.057a5.18 5.18 0 001.508-3.659h-1.5zm-1.072 2.602a3.68 3.68 0 01-2.622 1.092v1.5a5.18 5.18 0 003.686-1.535l-1.064-1.057z"></path><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 15.5a1.496 1.496 0 01-1.5 1.5M15.445 19.891c.69 0 1.345-.158 1.928-.439.751-.362 1.704-.392 2.29.2L21 21.003M19.889 15.444c0 .688-.157 1.34-.436 1.922-.356.742-.387 1.68.192 2.265L21 21M21 21.002l-2.41-2.416M6 7v2.456C6 10.309 6.691 11 7.544 11v0c.853 0 1.545-.691 1.545-1.544V9m0-2v2m0 0C9.089 10.232 10 11 10 11"></path></svg>
+             </div>
+          <p className="text-[10px]"></p>
+        </div>
+        <div className="flex flex-col gap-4  items-center justify-center">
+          <div className="bg-gray-100 p-4 rounded-lg">
+             <svg className="w-8" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" focusable="false"><defs></defs><g stroke="#0095da" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M12.2 16.444H6a3 3 0 01-3-3V7a3 3 0 013-3h7.197a3 3 0 012.249 1.014l2.802 3.172A3 3 0 0119 10.172V11.5"></path><path d="M11.675 13.333H7.11a1 1 0 01-1-1V9a1 1 0 011-1h4.222a1 1 0 011 1v3.001"></path></g><path stroke="#ff4f00" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.043 11.98s3.086.336 4.457-1.98c1.371 2.316 4.457 1.98 4.457 1.98C21.514 19.841 16.5 21 16.5 21s-5.014-1.158-4.457-9.02z"></path></svg>
+        
+
+            </div>
+          <p className="text-[10px]"></p>
+        </div>
+
+
+
+
+
+
+
+       
       </div>
-    
+      <Footer />
+    </div>
   );
 };
 
